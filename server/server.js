@@ -43,3 +43,25 @@ everyone.disconnected(function(){
 everyone.now.distributeMessage = function(message){
   everyone.now.receiveMessage(this.now.name, this.now.colour, message);
 };
+
+everyone.now.doToppl = function(newVenue) {
+	currentVenue = newVenue;
+	everyone.now.setNewVenue(newVenue);
+};
+
+var currentVenue;
+
+// set the starting point to PostRank
+var currentVenue = {
+	name: "Starting point",
+	address:{
+		street: "180 King St S",
+		city: "Waterloo",
+		prov:"ON",
+		pcode:"N2J2X3"
+	},
+	geoCode:{
+		latitude:"43.468002",
+		longitude:"-80.523176"
+	}
+};
