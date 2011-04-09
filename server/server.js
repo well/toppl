@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 
 
 app.configure( function(){
-	app.use(express.static(__dirname + '../client'));
+	app.use(express.static(__dirname + '/../client'));
 });
 
 
