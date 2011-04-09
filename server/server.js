@@ -41,5 +41,5 @@ everyone.disconnected(function(){
 });
 
 everyone.now.distributeMessage = function(message){
-  everyone.now.receiveMessage(this.now.name, message);
+  everyone.now.receiveMessage(this.now.name, this.now.colour, message);
 };

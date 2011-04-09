@@ -7,8 +7,10 @@ $(document).ready(function(){
 	}
   
 	now.name = prompt("What's your name?", "");
-	now.receiveMessage = function(name, message){
-		$("#messages").append("<br>" + name + ": " + message);
+	now.colour = '#'+Math.floor(Math.random()*16777215).toString(16);
+	
+	now.receiveMessage = function(name, colour, message){
+		$("#messages").append("<br>" + '<span style="color:' + colour + ';">' + name + "</span>" + ": " + message);
 	}
 	  
 	$("#send-button").click(function(){
