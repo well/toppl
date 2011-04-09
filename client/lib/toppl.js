@@ -29,6 +29,8 @@ $(document).ready(function() {
 									'<span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">' + '' + venues[i].name + '</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow"></span></span></a>' +
 									   '<center> Current Votes: ' + venues[i].votes +
 									   '</center><br/>');
+									
+	
 			totalVotes += venues[i].votes;
 			
 			if(venues[i].votes > highestVote) {
@@ -40,8 +42,8 @@ $(document).ready(function() {
 		
 		chartVals = chartVals.substring(0, chartVals.length - 1);
 		$("#vote-results").html("");
-		$("#vote-results").html('<img src="http://chart.apis.google.com/chart?chxr=0,0,' + highestVote + '?chxt=y&chbh=a&chs=300x225&cht=bvg&chco=A2C180,3D7930&chd=t:' + chartVals + '" width="300" height="225" />');
-		
+		//$("#vote-results").html('<img src="http://chart.apis.google.com/chart?chxr=0,0,' + highestVote + '?chxt=y&chbh=a&chs=300x225&cht=bvg&chco=A2C180,3D7930&chd=t:' + chartVals + '" width="300" height="225" />');
+		$("#vote-results").html('<center><img src="http://chart.apis.google.com/chart?chf=bg,s,EAEAEA&chds=0,10&chxt=x,y,r&chs=300x150&cht=bvg&chco=76A4FB&chd=t:' + chartVals + '&chg=20,50"></center>');
 		bindVotes();
 	}
 
