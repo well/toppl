@@ -44,9 +44,14 @@ $(document).ready(function(){
 	now.name = prompt("What's your name?", "");
 	now.colour = '#'+Math.floor(Math.random()*16777215).toString(16);
 	
-	now.receiveMessage = function(name, colour, message, locations){
-		$("#messages").append("<br>" + '<span style="color:' + colour + ';">' + name + "</span>" + ": " + message);
-		updatelocations(locations);
+	now.receiveMessage = function(name, colour, message){
+		if (colour == now.colour)
+			$("#messages").append("" + '<p class="triangle-border left" style="color:' + colour + ';">' + name + "</span>" + ": " + message);
+			updatelocations(locations);
+		else
+			$("#messages").append("" + '<p class="triangle-border right" style="color:' + colour + ';">' + name + "</span>" + ": " + message);
+			updatelocations(locations);
+			
 	}
 	  
 	$("#send-button").click(function(){
