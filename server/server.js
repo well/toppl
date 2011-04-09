@@ -8,6 +8,10 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
+app.configure( function(){
+	app.use(express.static(__dirname + '/client'));
+});
+
 
 // Routes
 
