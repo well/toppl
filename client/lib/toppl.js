@@ -1,4 +1,8 @@
 $(document).ready(function() {
+	now.setCurrentLocation = function(venue) {
+		$("#current_location_name").html(venue.name);
+	}
+
 	for(var i=0; i<5; i++) {
 		$("#bar-choice-" + i).click(function() {
 			alert($(this).attr("value") + " was clicked!");
