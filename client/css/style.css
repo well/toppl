@@ -11,7 +11,7 @@ body {
 h2 {
 	font-family: "Cabin Sketch";
 	font-size: 30px;
-	color: darkslateblue;
+	color: #075698;
 }
 
 
@@ -28,7 +28,7 @@ h2 {
 position: relative;
 padding: 12px;
 margin: 1em 0 3em;
-border: 5px solid #5A8F00;
+border: 5px solid #075698;
 color: #333;
 background: white;
 -webkit-border-radius: 10px;
@@ -41,7 +41,7 @@ top: 10px;
 bottom: auto;
 left: -30px;
 border-width: 15px 30px 15px 0;
-border-color: transparent #5A8F00;
+border-color: transparent #075698;
 }
 .triangle-border::before {
 content: "";
@@ -50,7 +50,7 @@ bottom: -20px;
 left: 40px;
 border-width: 20px 20px 0;
 border-style: solid;
-border-color: #5A8F00 transparent;
+border-color: #075698 transparent;
 display: block;
 width: 0;
 }
@@ -84,7 +84,7 @@ bottom: auto;
 left: auto;
 right: -30px;
 border-width: 15px 0 15px 30px;
-border-color: transparent #5A8F00;
+border-color: transparent #075698;
 }
 
 .triangle-border.right::after {
