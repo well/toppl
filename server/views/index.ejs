@@ -1,23 +1,81 @@
-<h2>Chat Window</h2>
-<div id="messages"></div>
-<div style="position: absolute; bottom: 25;">
-<input type="text" id="text-input">
-<input type="button" value="Send" id="send-button">
+<div data-role="page" id="chat-page" data-fullscreen="true"> 
+
+	
+	<div data-role="header" data-position="fixed"> 
+		<h1>Toppl</h1> 
+		<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a> 
+	</div> 
+	
+	 
+	<div data-role="content">
+		<h2>Chat Window</h2>
+		<div id="messages"></div>
+		<div>
+		<input type="text" id="text-input">
+		<input type="button" value="Send" id="send-button">
+		</div>
+		
+		<script src="lib/chat.js"></script>
+	</div>
+    
+    <div data-role="footer" data-id="toppl_footer" data-position="fixed"> 
+		<div data-role="navbar" class="nav-glyphish" data-grid="b"> 
+			<ul> 
+				<li><a href="#chat-page" id="chat" data-icon="custom" data-theme="c" class="ui-btn-active ui-state-persist">Chat</a></li> 
+				<li><a href="#map-page" id="map" data-icon="custom" data-theme="c">Map</a></li> 
+				<li><a href="#toppl-page" id="beer" data-icon="custom" data-theme="c">Toppl</a></li> 
+			</ul> 
+		</div><!-- /navbar --> 
+	</div>
+
 </div>
-<script>
-    $(document).ready(function(){
-      
-      now.name = prompt("What's your name?", "");  
-      now.receiveMessage = function(name, message){
-        $("#messages").append("<br>" + name + ": " + message);
-      }
-      
-      $("#send-button").click(function(){
-        now.distributeMessage($("#text-input").val());
-        $("#text-input").val("");
-        $("#text-input").focus();
-      });
-      
-    });
-      
-</script>
+
+<div data-role="page" id="map-page" data-fullscreen="true"> 
+
+	
+	<div data-role="header" data-position="fixed"> 
+		<h1>Toppl</h1> 
+		<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a> 
+	</div> 
+	
+	<div data-role="content">
+		<h2>Map</h2>
+	</div>
+	
+    
+    <div data-role="footer" data-id="toppl_footer" data-position="fixed"> 
+		<div data-role="navbar" class="nav-glyphish" data-grid="b"> 
+			<ul> 
+				<li><a href="#chat-page" id="chat" data-icon="custom" data-theme="c" data-direction="reverse">Chat</a></li> 
+				<li><a href="#map-page" id="map" data-icon="custom" data-theme="c" class="ui-btn-active ui-state-persist">Map</a></li> 
+				<li><a href="#toppl-page" id="beer" data-icon="custom" data-theme="c">Toppl</a></li> 
+			</ul>  
+		</div><!-- /navbar --> 
+	</div>
+
+</div>
+
+<div data-role="page" id="toppl-page" data-fullscreen="true"> 
+
+	
+	<div data-role="header" data-position="fixed"> 
+		<h1>Toppl</h1> 
+		<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a> 
+	</div> 
+	
+	 
+	<div data-role="content">
+		<h2>Toppl</h2>
+	</div>
+    
+    <div data-role="footer" data-id="toppl_footer" data-position="fixed"> 
+		<div data-role="navbar" class="nav-glyphish" data-grid="b"> 
+			<ul> 
+				<li><a href="#chat-page" id="chat" data-icon="custom" data-theme="c" data-direction="reverse">Chat</a></li> 
+				<li><a href="#map-page" id="map" data-icon="custom" data-theme="c" data-direction="reverse">Map</a></li> 
+				<li><a href="#toppl-page" id="beer" data-icon="custom" data-theme="c" class="ui-btn-active ui-state-persist">Toppl</a></li> 
+			</ul> 
+		</div><!-- /navbar --> 
+	</div>
+
+</div>
