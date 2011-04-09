@@ -14,4 +14,11 @@ $(document).ready(function(){
 	$("#send-button").click(function(){
 		sendMessage();
 	});
+	
+	$("#text-input").bind('keyup', function(e) {
+		var code = (e.keyCode ? e.keyCode : e.which);
+		if(code == 13) { //Enter keycode
+		   sendMessage();
+		}
+	});
 });
