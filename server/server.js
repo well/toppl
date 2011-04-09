@@ -35,15 +35,9 @@ console.log("Express server listening on port %d", app.address().port);
 // NowJS component
 
 var everyone = require("now").initialize(app);
-
-var bars = new Array();
-bars["Ethel's"] = 0;
-bars["Jane Bond"] = 0;
-bars["Starlight"] = 0;
-bars["McMullan's"] = 0;
-bars["Chainsaw"] = 0;
-
-everyone.now.bars = bars;
+var bars = JSON.stringify({
+	bar: "Starlight", count: 0
+});
 
 everyone.connected(function(){
       console.log("Joined: " + this.now.name);
@@ -61,8 +55,8 @@ everyone.now.distributeMessage = function(message){
 };
 
 everyone.now.vote = function(bar) {
-	everyone.now.bars[bar]++;
-	everyone.now.receiveVote();
+	console.log("Voted: " + bar);
+	everyone.now.receiveVote(bars);
 }
 
 // pass this the ID of the new venue

@@ -14,10 +14,11 @@ $(document).ready(function() {
 		});
 	}
 	
-	now.receiveVote = function() {
-		for(var i in now.bars) {
-			var bar = now.bars[i];
-			$("#vote-results").append(bar + "<br/>");
+	now.receiveVote = function(bars) {
+		var bars = JSON.parse(bars);
+		for(var i in bars) {
+			var bar = bars[i];
+			$("#vote-results").append(bar.bar + " count: " + bar. "<br/>");
 		}
 	}
 });
