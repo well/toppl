@@ -30,6 +30,14 @@ console.log("Express server listening on port %d", app.address().port);
 
 var everyone = require("now").initialize(app);
 
+var bars = new Array();
+bars["Ethel's"] = 0;
+bars["Jane Bond"] = 0;
+bars["Starlight"] = 0;
+bars["McMullan's"] = 0;
+bars["Chainsaw"] = 0;
+
+everyone.now.bars = bars;
 
 everyone.connected(function(){
       console.log("Joined: " + this.now.name);
@@ -42,4 +50,9 @@ everyone.disconnected(function(){
 
 everyone.now.distributeMessage = function(message){
   everyone.now.receiveMessage(this.now.name, this.now.colour, message);
+};
+
+everyone.now.vote = function(bar) {
+	everyone.now.bars[bar]++;
+	everyone.now.receiveVote();
 };
