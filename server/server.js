@@ -41,6 +41,7 @@ var bars = JSON.stringify({
 
 everyone.connected(function(){
       console.log("Joined: " + this.now.name);
+	everyone.now.setCurrentLocation(currentVenue);
 });
 
 
