@@ -4,6 +4,25 @@ var APIKEY = "zy33cw38dgg6js6eg6hrfxkj";
 var API_KEYWORD = "bar"; 			// this is the string that is used to search
 var NUM_NEXT_VENUE_OPTIONS = 5;
 
+// init data
+var currentVenue;
+
+// set the starting point to PostRank
+currentVenue = {
+	name: "Starting point",
+	address:{
+		street: "180 King St S",
+		city: "Waterloo",
+		prov:"ON",
+		pcode:"N2J2X3"
+	},
+	geoCode:{
+		latitude:"43.468002",
+		longitude:"-80.523176"
+	}
+};
+
+
 var express = require('express');
 
 var app = express.createServer();
@@ -61,13 +80,15 @@ everyone.now.vote = function(id) {
 everyone.now.doToppl = function(newVenueID) {
 	currentVenue = nextVenues(newVenueID);
 	everyone.now.setCurrentLocation(newVenue);
+	console.log("TOPPL! New venue is " + currentVenue.name);
 
 	// update the options for the next venues
-	
+	nextVenues = getNextVenues(currentVenue)
+	console.log("New venue options:");
+	for(var i in nextVenues) {
+		console.log(nextVenues[i].name);
+	}
 };
-
-// init data
-var currentVenue;
 
 // Yellow API code
 // temp fake result data in case I don't want to call the Yellow API
@@ -84,27 +105,14 @@ function getNextVenues(currentVenue) {
 	json_data = fake_result_data;
 
 	// Call the YellowAPI
-	return JSON.parse(json_data);
-}
-
-// set the starting point to PostRank
-currentVenue = {
-	name: "Starting point",
-	address:{
-		street: "180 King St S",
-		city: "Waterloo",
-		prov:"ON",
-		pcode:"N2J2X3"
-	},
-	geoCode:{
-		latitude:"43.468002",
-		longitude:"-80.523176"
+	yellowAPIResults = JSON.parse(json_data);
+	var venues = yellowAPIResults.listings;
+	for(var i in venues) {
+		venues[i].votes = 0;
 	}
-};
-
-var yellowAPIResults = getNextVenues(currentVenue);
-var nextVenues = yellowAPIResults.listings;
-for(var i in nextVenues) {
-	nextVenues[i].votes = 0;
+	return venues;
 }
+
+var nextVenues = getNextVenues(currentVenue);
+
 
