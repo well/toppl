@@ -45,13 +45,13 @@ $(document).ready(function(){
 	now.colour = '#'+Math.floor(Math.random()*16777215).toString(16);
 	
 	now.receiveMessage = function(name, colour, message){
-		if (colour == now.colour)
+		if (colour == now.colour) {
 			$("#messages").append("" + '<p class="triangle-border left" style="color:' + colour + ';">' + name + "</span>" + ": " + message);
 			updatelocations(locations);
-		else
+		} else {
 			$("#messages").append("" + '<p class="triangle-border right" style="color:' + colour + ';">' + name + "</span>" + ": " + message);
 			updatelocations(locations);
-			
+		}
 	}
 	  
 	$("#send-button").click(function(){
