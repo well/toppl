@@ -6,7 +6,8 @@ $(document).ready(function(){
 		$("#text-input").focus();
 	}
   
-	now.name = prompt("What's your name?", "");
+	//now.name = prompt("What's your name?", "");
+	now.name = "Matt";
 	now.colour = '#'+Math.floor(Math.random()*16777215).toString(16);
 	
 	now.receiveMessage = function(name, colour, message){
