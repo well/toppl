@@ -20,23 +20,12 @@
 		<%- body %>
     </div>
     
-    <style type="text/css">	
-		.nav-glyphish .ui-btn .ui-btn-inner { padding-top: 40px !important; }
-		.nav-glyphish .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: none !important; border-radius: none !important; }
-		#chat .ui-icon { background:  url(glyphish-icons/09-chat2.png) 50% 50% no-repeat; background-size: 24px 22px; }
-		#email .ui-icon { background:  url(glyphish-icons/18-envelope.png) 50% 50% no-repeat; background-size: 24px 16px;  }
-		#login .ui-icon { background:  url(glyphish-icons/30-key.png) 50% 50% no-repeat;  background-size: 12px 26px; }
-		#beer .ui-icon { background:  url(glyphish-icons/88-beermug.png) 50% 50% no-repeat;  background-size: 22px 27px; }
-		#coffee .ui-icon { background:  url(glyphish-icons/100-coffee.png) 50% 50% no-repeat;  background-size: 20px 24px; }
-		#skull .ui-icon { background:  url(glyphish-icons/21-skull.png) 50% 50% no-repeat;  background-size: 22px 24px; }
-	</style> 
-    
     <div data-role="footer" data-id="toppl_footer" data-position="fixed"> 
-		<div data-role="navbar"> 
+		<div data-role="navbar" class="nav-glyphish" data-grid="b"> 
 			<ul> 
-				<li><a href="#" class="ui-btn-active ui-state-persist">Chat</a></li> 
-				<li><a href="#">Map</a></li> 
-				<li><a href="#">Toppl</a></li> 
+				<li><a href="#" id="chat" data-icon="custom" data-theme="c">Chat</a></li> 
+				<li><a href="#" id="map" data-icon="custom" data-theme="c">Map</a></li> 
+				<li><a href="#" id="beer" data-icon="custom" data-theme="c">Toppl</a></li> 
 			</ul> 
 		</div><!-- /navbar --> 
 	</div>
