@@ -50,5 +50,4 @@ $(document).ready(function() {
 	$("#toppl_button").click(function() {
 		now.doToppl();
 	});
-
 });
