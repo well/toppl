@@ -11,12 +11,15 @@
 </head> 
 <body>
 
-<div  data-role="page"> 
-  <div id="container">
-    <div data-role="header">
-    	<h1>Toppl</h1>
-    </div>
-    <div id="main" data-role="content">
+<div data-role="page" data-fullscreen="true"> 
+
+	
+	<div data-role="header" data-position="fixed"> 
+		<h1>Toppl</h1> 
+		<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a> 
+	</div> 
+	
+	<div data-role="content"> 
 		<%- body %>
     </div>
     
@@ -29,7 +32,7 @@
 			</ul> 
 		</div><!-- /navbar --> 
 	</div>
-  </div> <!--! end of #container -->
+
 </div>
 
 <script src="/nowjs/now.js"></script>
