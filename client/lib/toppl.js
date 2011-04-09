@@ -2,7 +2,7 @@ $(document).ready(function() {
 	now.setCurrentLocation = function(venue) {
 		$("#current_location_name").html(venue.name);
 	}
-	
+
 	function bindVotes() {
 		for(var i=0; i<5; i++) {
 			$("#venue-" + i).click(function() {
@@ -24,5 +24,8 @@ $(document).ready(function() {
 		bindVotes();
 	}
 
-	
+	$("#toppl_button").click(function() {
+		now.doToppl();
+	});
+
 });

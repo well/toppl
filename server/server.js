@@ -80,16 +80,29 @@ everyone.now.vote = function(id) {
 }
 
 // pass this the ID of the new venue
-everyone.now.doToppl = function(newVenueID) {
-	currentVenue = nextVenues(newVenueID);
-	everyone.now.setCurrentLocation(newVenue);
-	console.log("TOPPL! New venue is " + currentVenue.name);
-
-	// update the options for the next venues
-	nextVenues = getNextVenues(currentVenue)
-	console.log("New venue options:");
+everyone.now.doToppl = function() {
+	// which venue is in the lead?
+	newVenue = -1;
+	maxVotes = 0;
 	for(var i in nextVenues) {
-		console.log(nextVenues[i].name);
+		if (nextVenues[i].votes > maxVotes) {
+			maxVotes = nextVenues[i].votes;
+			newVenue = i;
+		}
+	}
+
+	// This should always be true?
+	if (newVenue >= 0) {
+		currentVenue = nextVenues[newVenue];
+		everyone.now.setCurrentLocation(currentVenue);
+		console.log("TOPPL! New venue is " + currentVenue.name);
+
+		// update the options for the next venues
+		nextVenues = getNextVenues(currentVenue)
+		console.log("New venue options:");
+		for(var i in nextVenues) {
+			console.log(nextVenues[i].name);
+		}
 	}
 };
 
