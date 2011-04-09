@@ -15,11 +15,12 @@ $(document).ready(function() {
 		$("#bar-choice-0").html(venues[0].name);
 		$("#venue-choices").html("");
 		for(var i in venues) {
-			$("#venue-choices").append('<a href="#" id="venue-' + i +
-									   '" value="' + i +
-									   '">Vote ' + venues[i].name + '</a>' +
-									   ' Current Votes: ' + venues[i].votes +
-									   '<br/>');
+			$("#venue-choices").append('<a id="venue-' + i +
+			   '" value="' + i +
+			   '"href="#" data-icon="arrow-u" data-theme="a" class="ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a">' +
+									'<span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">' + '' + venues[i].name + '</span><span class="ui-icon ui-icon-arrow-u ui-icon-shadow"></span></span></a>' +
+									   '<center> Current Votes: ' + venues[i].votes +
+									   '</center><br/>');
 		}
 		bindVotes();
 	}
