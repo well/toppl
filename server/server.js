@@ -35,9 +35,6 @@ console.log("Express server listening on port %d", app.address().port);
 // NowJS component
 
 var everyone = require("now").initialize(app);
-var bars = JSON.stringify({
-	bar: "Starlight", count: 0
-});
 
 everyone.connected(function(){
       console.log("Joined: " + this.now.name);
