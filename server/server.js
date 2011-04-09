@@ -50,14 +50,18 @@ everyone.disconnected(function(){
       console.log("Left: " + this.now.name);
 });
 
+var locations = {};
+
 everyone.now.distributeMessage = function(message){
-  everyone.now.receiveMessage(this.now.name, this.now.colour, message);
+	locations[this.now.name] = this.now.location;
+	console.dir(locations);
+	everyone.now.receiveMessage(this.now.name, this.now.colour, message, locations);
 };
 
 everyone.now.vote = function(bar) {
 	console.log("Voted: " + bar);
 	everyone.now.receiveVote(bars);
-}
+};
 
 // pass this the ID of the new venue
 everyone.now.doToppl = function(newVenueID) {
