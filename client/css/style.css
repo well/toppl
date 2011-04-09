@@ -4,10 +4,14 @@ body {
 	background-color: black;
 }
 
+.ui-content {
+	margin-top: 30px;
+}
+
 h2 {
-	font-family: Miltonian;
+	font-family: "Cabin Sketch";
 	font-size: 30px;
-	color: #333;
+	color: #075698;
 }
 
 
@@ -16,3 +20,79 @@ h2 {
 #chat .ui-icon { background:  url(/img/glyphish-icons/icons/09-chat-2.png) 50% 50% no-repeat; background-size: 24px 22px; }
 #beer .ui-icon { background:  url(/img/glyphish-icons/icons/88-beer-mug.png) 50% 50% no-repeat;  background-size: 22px 27px; }
 #map .ui-icon { background:  url(/img/glyphish-icons/icons/103-map.png) 50% 50% no-repeat;  background-size: 22px 24px; }
+
+#messages {
+	margin-left: 30px;
+}
+.triangle-border {
+position: relative;
+padding: 12px;
+margin: 1em 0 3em;
+border: 5px solid #075698;
+color: #333;
+background: white;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+}
+
+.triangle-border.left::before {
+top: 10px;
+bottom: auto;
+left: -30px;
+border-width: 15px 30px 15px 0;
+border-color: transparent #075698;
+}
+.triangle-border::before {
+content: "";
+position: absolute;
+bottom: -20px;
+left: 40px;
+border-width: 20px 20px 0;
+border-style: solid;
+border-color: #075698 transparent;
+display: block;
+width: 0;
+}
+.triangle-border.left::after {
+top: 16px;
+bottom: auto;
+left: -21px;
+border-width: 9px 21px 9px 0;
+border-color: transparent white;
+}
+.triangle-border::after {
+content: "";
+position: absolute;
+bottom: -13px;
+left: 47px;
+border-width: 13px 13px 0;
+border-style: solid;
+border-color: white transparent;
+display: block;
+width: 0;
+}
+
+
+.triangle-border.right {
+margin-right: 30px;
+}
+
+.triangle-border.right::before {
+top: 10px;
+bottom: auto;
+left: auto;
+right: -30px;
+border-width: 15px 0 15px 30px;
+border-color: transparent #075698;
+}
+
+.triangle-border.right::after {
+top: 16px;
+bottom: auto;
+left: auto;
+right: -21px;
+border-width: 9px 0 9px 21px;
+border-color: transparent white;
+}
+

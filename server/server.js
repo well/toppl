@@ -73,9 +73,10 @@ everyone.now.distributeMessage = function(message){
   everyone.now.receiveMessage(this.now.name, this.now.colour, message);
 };
 
-everyone.now.vote = function(bar) {
-	console.log("Voted: " + bar);
-	everyone.now.receiveVote(bars);
+everyone.now.vote = function(id) {
+	console.log("Voted: " + id);
+	nextVenues[id].votes++;
+	everyone.now.setNextVenues(nextVenues);
 }
 
 // pass this the ID of the new venue
@@ -108,8 +109,13 @@ function getNextVenues(currentVenue) {
 
 	// Call the YellowAPI
 	yellowAPIResults = JSON.parse(json_data);
-	return yellowAPIResults.listings;
+	var venues = yellowAPIResults.listings;
+	for(var i in venues) {
+		venues[i].votes = 0;
+	}
+	return venues;
 }
 
 var nextVenues = getNextVenues(currentVenue);
+
 
