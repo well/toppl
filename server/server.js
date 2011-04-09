@@ -54,9 +54,10 @@ everyone.now.distributeMessage = function(message){
   everyone.now.receiveMessage(this.now.name, this.now.colour, message);
 };
 
-everyone.now.vote = function(bar) {
-	console.log("Voted: " + bar);
-	everyone.now.receiveVote(bars);
+everyone.now.vote = function(id) {
+	console.log("Voted: " + id);
+	nextVenues[id].votes++;
+	everyone.now.setNextVenues(nextVenues);
 }
 
 // pass this the ID of the new venue
@@ -106,4 +107,7 @@ currentVenue = {
 
 var yellowAPIResults = getNextVenues(currentVenue);
 var nextVenues = yellowAPIResults.listings;
+for(var i in nextVenues) {
+	nextVenues[i].votes = 0;
+}
 

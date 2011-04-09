@@ -2,23 +2,27 @@ $(document).ready(function() {
 	now.setCurrentLocation = function(venue) {
 		$("#current_location_name").html(venue.name);
 	}
+	
+	function bindVotes() {
+		for(var i=0; i<5; i++) {
+			$("#venue-" + i).click(function() {
+				now.vote($(this).attr("value"));
+			});
+		}
+	}
 
 	now.setNextVenues = function(venues) {
 		$("#bar-choice-0").html(venues[0].name);
+		$("#venue-choices").html("");
+		for(var i in venues) {
+			$("#venue-choices").append('<a href="#" id="venue-' + i +
+									   '" value="' + i +
+									   '">Vote ' + venues[i].name + '</a>' +
+									   ' Current Votes: ' + venues[i].votes +
+									   '<br/>');
+		}
+		bindVotes();
 	}
 
-	for(var i=0; i<5; i++) {
-		$("#bar-choice-" + i).click(function() {
-			alert($(this).attr("value") + " was clicked!");
-			now.vote($(this).attr("value"));
-		});
-	}
 	
-	now.receiveVote = function(bars) {
-		var bars = JSON.parse(bars);
-		for(var i in bars) {
-			var bar = bars[i];
-			$("#vote-results").append(bar.bar + " count: " + bar. "<br/>");
-		}
-	}
 });
