@@ -4,10 +4,14 @@ body {
 	background-color: black;
 }
 
+.ui-content {
+	margin-top: 30px;
+}
+
 h2 {
-	font-family: Miltonian;
+	font-family: "Cabin Sketch";
 	font-size: 30px;
-	color: #333;
+	color: darkslateblue;
 }
 
 
