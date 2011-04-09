@@ -43,7 +43,6 @@ $(document).ready(function(){
 		google_maps_img_string += "&sensor=false";
 		
 		document.getElementById('map_canvas').innerHTML = "<img src="+google_maps_img_string+"></img>";
-		alert (google_maps_img_string);
 	}
 	
 	now.name = prompt("What's your name?", "");
