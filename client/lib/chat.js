@@ -1,4 +1,9 @@
+var toppllocations = {};
+
 $(document).ready(function(){
+	$("#map").click(function () {
+		updatelocations(toppllocations);
+	});
 	
 	function sendMessage() {
 		setGeolocation();
@@ -43,14 +48,14 @@ $(document).ready(function(){
 	
 	now.name = prompt("What's your name?", "");
 	now.colour = '#'+Math.floor(Math.random()*16777215).toString(16);
-	
-	now.receiveMessage = function(name, colour, message){
+
+	now.receiveMessage = function(name, colour, message, locations){
 		if (colour == now.colour) {
 			$("#messages").append("" + '<p class="triangle-border left" style="color:' + colour + ';">' + name + "</span>" + ": " + message);
-			updatelocations(locations);
+			toppllocations = locations;
 		} else {
 			$("#messages").append("" + '<p class="triangle-border right" style="color:' + colour + ';">' + name + "</span>" + ": " + message);
-			updatelocations(locations);
+			toppllocations = locations;
 		}
 	}
 	  
