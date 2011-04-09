@@ -11,16 +11,19 @@
 </head> 
 <body>
 
-<div  data-role="page"> 
-  <div id="container">
-    <div data-role="header">
-    	<h1>Toppl</h1>
-    </div>
-    <div id="main" data-role="content">
+<div data-role="page" data-fullscreen="true"> 
+
+	
+	<div data-role="header" data-position="fixed"> 
+		<h1>Toppl</h1> 
+		<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a> 
+	</div> 
+	
+	<div data-role="content"> 
 		<%- body %>
-    </div>
-    
-    <style type="text/css">	
+	</div> 
+	
+	<style type="text/css">	
 		.nav-glyphish .ui-btn .ui-btn-inner { padding-top: 40px !important; }
 		.nav-glyphish .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: none !important; border-radius: none !important; }
 		#chat .ui-icon { background:  url(glyphish-icons/09-chat2.png) 50% 50% no-repeat; background-size: 24px 22px; }
@@ -29,8 +32,9 @@
 		#beer .ui-icon { background:  url(glyphish-icons/88-beermug.png) 50% 50% no-repeat;  background-size: 22px 27px; }
 		#coffee .ui-icon { background:  url(glyphish-icons/100-coffee.png) 50% 50% no-repeat;  background-size: 20px 24px; }
 		#skull .ui-icon { background:  url(glyphish-icons/21-skull.png) 50% 50% no-repeat;  background-size: 22px 24px; }
-	</style> 
-    
+	</style>
+	
+	
     <div data-role="footer" data-id="toppl_footer" data-position="fixed"> 
 		<div data-role="navbar"> 
 			<ul> 
@@ -40,7 +44,7 @@
 			</ul> 
 		</div><!-- /navbar --> 
 	</div>
-  </div> <!--! end of #container -->
+
 </div>
 
 <script src="/nowjs/now.js"></script>
