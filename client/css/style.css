@@ -259,3 +259,18 @@ a:hover { color: #036; }
   h2, h3{ page-break-after: avoid; }
 }
 
+body {
+	background-color: black;
+}
+
+h2 {
+	font-family: Miltonian;
+	font-size: 30px;
+	color: yellow;
+}
+
+#messages {
+	font-family: Geo;
+	font-size: 18px;
+	color: green;
+}
