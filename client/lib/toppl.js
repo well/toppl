@@ -3,6 +3,10 @@ $(document).ready(function() {
 		$("#current_location_name").html(venue.name);
 	}
 
+	now.setNextVenues = function(venues) {
+		$("#bar-choice-0").html(venues[0].name);
+	}
+
 	for(var i=0; i<5; i++) {
 		$("#bar-choice-" + i).click(function() {
 			alert($(this).attr("value") + " was clicked!");
