@@ -6,7 +6,7 @@ var NUM_NEXT_VENUE_OPTIONS = 5;
 
 // init data
 var currentVenue;
-var nextVenues;
+var nextVenues = null;
 
 // set the starting point to PostRank
 currentVenue = {
@@ -58,6 +58,12 @@ var everyone = require("now").initialize(app);
 
 everyone.connected(function(){
       console.log("Joined: " + this.now.name);
+
+	// if this is the first person to log in then initialize the data!
+	if (nextVenues == null) {
+		getNextVenues(currentVenue);		
+	}
+
 	everyone.now.setCurrentLocation(currentVenue);
 	everyone.now.setNextVenues(nextVenues);
 });
@@ -97,6 +103,12 @@ everyone.now.doToppl = function() {
 	if (newVenue >= 0) {
 		currentVenue = nextVenues[newVenue];
 		everyone.now.setCurrentLocation(currentVenue);
+		locations[currentVenue.name] = {
+			coords: {
+				longitude : currentVenue.geoCode.longitude,
+				latitude : currentVenue.geoCode.latitude
+			}
+		};
 		console.log("TOPPL! New venue is " + currentVenue.name);
 
 		getNextVenues(currentVenue);
@@ -160,4 +172,3 @@ function getNextVenues(currentVenue) {
 	});
 }
 
-getNextVenues(currentVenue);
